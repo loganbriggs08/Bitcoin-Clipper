@@ -25,6 +25,14 @@ class clipboard:
             return None
         
     def set_contents(content: str) -> bool:
+        """Set the contents of the clipboard.
+
+        Args:
+            content (str): The text that will be set in the clipboard.
+
+        Returns:
+            bool: If the content could be set on the users clipboard.
+        """
         try:
             win32clipboard.OpenClipboard()
             win32clipboard.EmptyClipboard()
