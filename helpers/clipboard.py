@@ -52,7 +52,6 @@ class clipboard:
         Returns:
             bool: If the content could be set on the users clipboard.
         """
-        print("here")
         sentence = content.split()
         new_sentence: str = ""
         
