@@ -3,6 +3,7 @@
 Working Bitcoin Clipper malware created in Python that can change addresses in sentences or just an address by itself, fast and efficient so it always works before the address is pasted.
 
 My investigation of this type of Malware can be found here along with a useful tutorial on how to setup the project:
+
 https://www.katsu.bio/posts/3DFMRJVv5QnwPCTi
 
 ## About
